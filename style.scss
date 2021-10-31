@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300&family=Sriracha&display=swap');
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+// start mixin
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+    // For Google Chrome
+    &::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: $background-color;
+    }
+  
+    // For Internet Explorer
+    & {
+      scrollbar-face-color: $foreground-color;
+      scrollbar-track-color: $background-color;
+    }
+}
+
+*{
+    font-family: 'Prompt', sans-serif;
+}
+
+button, input, textarea, select{
+    box-shadow: none !important;
+}
+
+.logo{
+    font-family: 'Sriracha', cursive !important;
+}
+
+.img-lucky{
+    object-fit: cover;
+    width: 100%;
+    height: 110vh;
+}
+
+.auto-dropdown{
+    padding-left: 0;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .5s;
+    &+span>i{
+        transform: rotate(0deg);
+        transition: all .5s;
+    }
+    &:focus{
+        border-color: $pink !important;
+        &+span>i{
+            transform: rotate(-180deg);
+        }
+    }
+}
+
+.auto-height{
+    height: 180px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    @include scrollbars(5px, $pink, #d6a9c0);
+}
+
+.my-valid{
+    border-color: $green !important;
+}
+
+.my-invalid{
+    border-color: $red !important;
+}
+

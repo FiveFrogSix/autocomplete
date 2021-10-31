@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ลงทะเบียนรับรางวัล</title>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link href='/node_modules/sweetalert2/dist/sweetalert2.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+       
+    </style>
+</head>
+<body>    
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand " href="/">
+                    <i class='bx bxs-paper-plane align-middle fs-4 text-primary'></i>
+                    <span class="fw-bolder logo">
+                        FlyingPaper
+                    </span>
+                </a>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="#">หน้าแรก</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">รับรางวัล</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" target="_blank"  href="https://github.com/fivefrogsix">ติดต่อเรา</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+          </nav>
+    </header>
+    <section id="Information" class="col-12 mx-auto">
+        <div class="row row-cols-1 row-cols-lg-2 m-0">
+            <div class="col ">
+                <div class="col-10 col-xl-6 mx-auto">
+                    <h1 class="mb-5 mt-5 text-center" style="opacity: 0.7;">กรอกข้อมูลเพื่อรับรางวัล</h1>
+                    <form id="LuckyForm" onSubmit="LuckyForm(); return false">
+                        <label for="name">ชื่อ-นามสกุล</label>
+                        <div class="mb-4">
+                            <input id="name" type="text" class="form-control auto-dropdown rounded-0 border-0 border-bottom" >
+                         
+                        </div>
+
+                        <label for="email">อีเมลล์</label>
+                        <div class="mb-4">
+                            <input id="email" type="email" class="form-control auto-dropdown rounded-0 border-0 border-bottom" >
+                        </div>
+
+                        <label for="tel">เบอร์โทรศัพท์</label>
+                        <div class="mb-4">
+                            <input id="tel" type="text" class="form-control auto-dropdown rounded-0 border-0 border-bottom" >
+                        </div>
+                        
+                        <label>วันเดือนปีเกิด</label>
+                        <div class="d-flex mb-4">
+                            <div class="me-2 position-relative">
+                                <input id="year" type="text" class="text-center form-control auto-dropdown rounded-0 border-0 border-bottom" placeholder="ปี" autocomplete="off">
+                                <span class="position-absolute end-0 top-50 translate-middle-y">
+                                    <i class='bx bx-caret-down '></i>
+                                </span>
+                            </div>
+                            <div class="me-2 position-relative">
+                                <input id="month" type="text" class="text-center form-control auto-dropdown rounded-0 border-0 border-bottom " placeholder="เดือน" autocomplete="off" disabled>
+                                <span class="position-absolute end-0 top-50 translate-middle-y">
+                                    <i class='bx bx-caret-down '></i>
+                                </span>
+                            </div>
+                            <div class="position-relative">
+                                <input id="days" type="text" class="text-center form-control auto-dropdown rounded-0 border-0 border-bottom " placeholder="วัน" autocomplete="off" disabled>
+                                <span class="position-absolute end-0 top-50 translate-middle-y">
+                                    <i class='bx bx-caret-down'></i>
+                                    
+                                </span>
+                            </div>
+                        </div>
+
+                    
+
+                        <label>ที่อยู่</label>
+                        <div class="mb-4">
+                            <input id="address" type="text" class="form-control auto-dropdown rounded-0 border-0 border-bottom" >
+                        </div>
+
+
+                        <label>จังหวัด</label>
+                        <div class="mb-4 position-relative">
+                            <input hidden>
+                            <input id="province" type="text" class="form-control auto-dropdown rounded-0 border-0 border-bottom" autocomplete="off">
+                            <span class="position-absolute end-0 top-50 translate-middle-y">
+                                <i class='bx bx-caret-down '></i>
+                            </span>
+                        </div>
+                        
+                        <label>เขต/อำเภอ</label>
+                        <div class="mb-4 position-relative">
+                            <input hidden>
+                            <input id="amphur" type="text" class="form-control auto-dropdown rounded-0 border-0 border-bottom" autocomplete="off" disabled>
+                            <span class="position-absolute end-0 top-50 translate-middle-y">
+                                <i class='bx bx-caret-down '></i>
+                            </span>
+                        </div>
+
+                        <label>แขวง/ตำบล</label>
+                        <div class="mb-4 position-relative">
+                            <input hidden>
+                            <input id="districts" type="text" class="auto-dropdown form-control rounded-0 border-0 border-bottom" autocomplete="off" disabled>
+                            <span class="position-absolute end-0 top-50 translate-middle-y" >
+                                <i class='bx bx-caret-down '  ></i>
+                            </span>
+                        </div>
+
+
+                        <label>รหัสไปรษณีย์</label>
+                        <div class="mb-4 position-relative">
+                            <input id="zipcode" type="text" class="ps-0 form-control rounded-0 border-0 border-bottom" >                            
+                        </div>
+                        <p class="text-danger fst-italic">*ไม่มีการบันทึกลงฐานข้อมูล</p>
+                        <button type="submit" class="btn btn-primary rounded-0 w-100">รับรางวัล</button>
+                    </form>
+                </div>
+                
+
+            </div>
+            <div class="col h-100 p-0 d-none d-lg-block">
+               <img src="/img/bg-1.jpg" alt="side imgage" class="img-lucky">
+            </div>
+        </div>
+    </section>
+</body>
+    <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"> </script>
+    <script type="text/javascript" src="/lib/jquery-ui.min.js"> </script>    
+    <script type="text/javascript" src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="validate.js"></script>
+</html>
